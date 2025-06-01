@@ -30,7 +30,7 @@
                                     @if ($user->is_active == 1)
                                         <span class="text-primary">Actif</span>
                                     @else
-                                        <span class="text-primary">Non actif</span>
+                                        <span class="text-danger">Non actif</span>
                                     @endif
                                 </td>
                                 <td class="text-center"> {{ $user->role }} </td>
@@ -39,7 +39,7 @@
                                         <i class="mdi mdi-pencil" style="font-size: 1rem"></i>
                                     </a>
 
-                                    <a href="{{ route('user.delete', ['id' => $user->id]) }}" class="btn btn-sm btn-danger">
+                                    <a href="{{ route('user.delete', ['id' => $user->id]) }}" class="btn btn-sm btn-danger" onclick="return confirm('Vous etes sur le point de supprimer un element.')">
                                         <i class="mdi mdi-delete-circle" style="font-size: 1rem"></i>
                                     </a>
                                 </td>

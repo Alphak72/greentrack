@@ -15,8 +15,8 @@ class SuperUserTableSeeder extends Seeder
     public function run(): void
     {
         $user = User::create([
-            'name' => 'Kankou Doucouré',
-            'username' => 'k.doucoure',
+            'name' => 'Super admin',
+            'username' => 'superadmin',
             'password' => Hash::make('password'),
             'role' => 'Super admin',
             'type_user' => 1,

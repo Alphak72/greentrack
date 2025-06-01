@@ -6,6 +6,7 @@ use App\Models\Client;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
@@ -57,6 +58,100 @@ class UserController extends Controller
 
     public function create()
     {
-        return view('admin.pages.users.create');
+        $roles = Role::all();
+        return view('admin.pages.users.create', [
+            'roles' => $roles
+        ]);
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string',
+            'username' => 'required|unique:users,username',
+            'password' => 'required',
+            'type_user' => 'required|numeric',
+            'is_active' => 'required|numeric',
+        ]);
+
+        if ($request->role)
+        {
+            $role = $request->role;
+        } else {
+            $role = 'Administrateur';
+        }
+
+        try {
+            User::create([
+                'name' => $request->name,
+                'username' => $request->username,
+                'password' => Hash::make('password'),
+                'type_user' => $request->type_user,
+                'is_active' => $request->is_active,
+                'role' => $role,
+                'company' => Auth()->user()->company
+            ]);
+
+            toastr()->success('User ajouté avec succès.');
+            return to_route('user.index');
+
+        } catch (\Exception $err) {
+            toastr()->error($err->getMessage());
+            return redirect()->back();
+        }
+    }
+
+    public function edit($id)
+    {
+        $roles = Role::all();
+        $user = User::findOrFail($id);
+        return view('admin.pages.users.edit', [
+            'roles' => $roles,
+            'user' => $user
+        ]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'required|string',
+            'username' => 'required|unique:users,username,'.$id,
+            'type_user' => 'required|numeric',
+            'is_active' => 'required|numeric',
+        ]);
+
+        if ($request->role)
+        {
+            $role = $request->role;
+        } else {
+            $role = 'Administrateur';
+        }
+
+        try {
+            User::findOrFail($id)->update([
+                'name' => $request->name,
+                'username' => $request->username,
+                'type_user' => $request->type_user,
+                'is_active' => $request->is_active,
+                'role' => $role,
+                'company' => Auth()->user()->company
+            ]);
+
+            toastr()->success('User modifié avec succès.');
+            return to_route('user.index');
+
+        } catch (\Exception $err) {
+            toastr()->error($err->getMessage());
+            return redirect()->back();
+        }
+    }
+
+    public function delete($id)
+    {
+        $user = User::findOrFail($id);
+        $user->delete();
+
+        toastr()->success('User supprimé avec succès.');
+        return to_route('user.index');
     }
 }
