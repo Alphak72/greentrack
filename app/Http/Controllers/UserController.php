@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Client;
+use App\Models\Gie;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -72,6 +73,7 @@ class UserController extends Controller
             'password' => 'required',
             'type_user' => 'required|numeric',
             'is_active' => 'required|numeric',
+            'company' => 'required|string'
         ]);
 
         if ($request->role)
@@ -82,15 +84,22 @@ class UserController extends Controller
         }
 
         try {
-            User::create([
+            $user = User::create([
                 'name' => $request->name,
                 'username' => $request->username,
                 'password' => Hash::make('password'),
                 'type_user' => $request->type_user,
                 'is_active' => $request->is_active,
                 'role' => $role,
-                'company' => Auth()->user()->company
+                'company' => $request->company
             ]);
+
+            if ($request->type_user == 2)
+            {
+                Gie::create([
+                    'name' => $user->name,
+                ]);
+            }
 
             toastr()->success('User ajouté avec succès.');
             return to_route('user.index');

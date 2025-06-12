@@ -3,7 +3,7 @@
     @dd();
 @else
 
-@extends('layouts.client.master')
+@extends('layouts.gie.master')
 
 @section('content')
     <div class="content-wrapper">

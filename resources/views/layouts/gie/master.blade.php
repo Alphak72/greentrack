@@ -24,11 +24,11 @@
     <body>
         <div class="container-scroller">
             <!-- partial:partials/_navbar.html -->
-                @include('components.client.navbar')
+                @include('components.gie.navbar')
             <!-- partial -->
             <div class="container-fluid page-body-wrapper">
                 <!-- partial:partials/_sidebar.html -->
-                    @include('components.client.sidebar')
+                    @include('components.gie.sidebar')
                 <!-- partial -->
                 <div class="main-panel">
                     @yield('content')
@@ -36,7 +36,7 @@
                 <!-- partial:partials/_footer.html -->
                 <footer class="footer">
                     <div class="footer-inner-wraper">
-                        @include('components.client.footer')
+                        @include('components.gie.footer')
                     </div>
                 </footer>
                 <!-- partial -->

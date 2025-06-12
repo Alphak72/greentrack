@@ -30,7 +30,7 @@
                                         <label for="name">Nom complet <span class="text-danger">*</span></label>
                                         <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name" value="{{ $user->name }}">
                                         @error('name')
-                                            <span class="text-center">{{ $message }}</span>
+                                            <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
                                 </div>
@@ -40,7 +40,7 @@
                                         <label for="username">Username <span class="text-danger">*</span></label>
                                         <input type="text" name="username" class="form-control @error('username') is-invalid @enderror" id="username" value="{{ $user->username }}">
                                         @error('username')
-                                            <span class="text-center">{{ $message }}</span>
+                                            <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
                                 </div>
@@ -54,7 +54,7 @@
                                             <option value="0" {{ $user->is_active == 0 ? 'selected' : '' }}>Non actif</option>
                                         </select>
                                         @error('is_active')
-                                            <span class="text-center">{{ $message }}</span>
+                                            <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
                                 </div>
@@ -68,12 +68,22 @@
                                             <option value="2" {{ $user->type_user == 2 ? 'selected' : '' }}>GIE</option>
                                         </select>
                                         @error('type_user')
-                                            <span class="text-center">{{ $message }}</span>
+                                            <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
                                 </div>
 
-                                <div class="col-md-12 col-sm-12">
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label for="company">Entreprise <span class="text-danger">*</span></label>
+                                        <input type="text" name="company" class="form-control @error('company') is-invalid @enderror" id="company" value="{{ $user->company }}">
+                                        @error('company')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-12">
                                     <div class="form-group">
                                         <label for="role">Rôles </label>
                                         <select name="role" id="role" class="form-control @error('role') is-invalid @enderror">

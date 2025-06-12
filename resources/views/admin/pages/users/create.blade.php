@@ -64,7 +64,7 @@
                                             <option value="0" {{ old('is_active') == 0 ? 'selected' : '' }}>Non actif</option>
                                         </select>
                                         @error('is_active')
-                                            <span class="text-center">{{ $message }}</span>
+                                            <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
                                 </div>
@@ -78,12 +78,22 @@
                                             <option value="2" {{ old('type_user') == 2 ? 'selected' : '' }}>GIE</option>
                                         </select>
                                         @error('type_user')
-                                            <span class="text-center">{{ $message }}</span>
+                                            <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
                                 </div>
 
-                                <div class="col-md-12 col-sm-12">
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label for="company">Entreprise <span class="text-danger">*</span></label>
+                                        <input type="text" name="company" class="form-control @error('company') is-invalid @enderror" id="company" value="{{ old('company') }}">
+                                        @error('company')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-12">
                                     <div class="form-group">
                                         <label for="role">Rôles </label>
                                         <select name="role" id="role" class="form-control @error('role') is-invalid @enderror">
