@@ -1,10 +1,14 @@
 <?php
 
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\DemandeAdminController;
 use App\Http\Controllers\DemandeController;
+use App\Http\Controllers\GieController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PaiementAdminController;
+use App\Http\Controllers\PaiementClientController;
 use App\Http\Controllers\RequestController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\TarifController;
@@ -63,10 +67,34 @@ Route::prefix('admin/tarifs')->group(function () {
     Route::get('/delete/id={id}', [TarifController::class, 'delete'])->name('admin.tarif.delete');
 });
 
+// Route Demandes -- Admin
+Route::prefix('admin/demandes')->group(function () {
+    Route::get('/', [DemandeAdminController::class, 'index'])->name('admin.demande.index');
+    Route::get('/show/id={id}', [DemandeAdminController::class, 'show'])->name('admin.demande.show');
+});
+
+// Route Paiements -- Admin
+Route::prefix('admin/paiements')->group(function () {
+    Route::get('/gies', [PaiementAdminController::class, 'gie'])->name('admin.paiement.gie.index');
+    Route::get('/clients', [PaiementAdminController::class, 'client'])->name('admin.paiement.client.index');
+    Route::get('/create/id={id}', [PaiementAdminController::class, 'create'])->name('admin.paiement.create');
+    Route::post('/store', [PaiementAdminController::class, 'store'])->name('admin.paiement.store');
+    Route::get('/show/id={id}', [PaiementAdminController::class, 'show'])->name('admin.paiement.show');
+});
+
 // Route Clients -- Admin
 Route::prefix('admin/clients')->group(function () {
     Route::get('/', [ClientController::class, 'index'])->name('admin.client.index');
     Route::get('/show/id={id}', [ClientController::class, 'show'])->name('admin.client.show');
+});
+
+// Route Gies -- Admin
+Route::prefix('admin/gies')->group(function () {
+    Route::get('/', [GieController::class, 'index'])->name('admin.gie.index');
+    Route::get('/edit/id={id}', [GieController::class, 'edit'])->name('admin.gie.edit');
+    Route::post('/update/id={id}', [GieController::class, 'update'])->name('admin.gie.update');
+    Route::get('/delete/id={id}', [GieController::class, 'delete'])->name('admin.gie.delete');
+    Route::get('/show/id={id}', [GieController::class, 'show'])->name('admin.gie.show');
 });
 
 // Route Demandes -- Clients
@@ -80,12 +108,20 @@ Route::prefix('clients')->group(function () {
     Route::get('/demandes/show/id={id}', [RequestController::class, 'show'])->name('client.demande.show');
 });
 
+// Route Paiements -- Clients
+Route::prefix('client/paiements')->group(function () {
+    Route::get('/', [PaiementClientController::class, 'index'])->name('client.paiement.index');
+    Route::get('/effectuer', [PaiementClientController::class, 'perform'])->name('client.paiement.perform');
+    Route::get('/create/id={id}', [PaiementClientController::class, 'create'])->name('client.paiement.create');
+    Route::post('/store', [PaiementClientController::class, 'store'])->name('client.paiement.store');
+    Route::get('/show/id={id}', [PaiementClientController::class, 'show'])->name('client.paiement.show');
+});
+
 // Route Demandes -- Gie
 Route::prefix('gie')->group(function () {
     Route::get('/demandes/attente', [DemandeController::class, 'attente'])->name('gie.demande.attente');
     Route::get('/demandes/attente/show/id={id}', [DemandeController::class, 'attenteShow'])->name('gie.demande.attente.show');
     Route::get('/demandes/attente/store/id={id}', [DemandeController::class, 'attenteStore'])->name('gie.demande.attente.store');
     Route::get('/demandes/attente/cancel/id={id}', [DemandeController::class, 'attenteCancel'])->name('gie.demande.attente.cancel');
-    Route::get('/demandes/en-cour', [DemandeController::class, 'encour'])->name('gie.demande.encour');
     Route::get('/demandes/traites', [DemandeController::class, 'traite'])->name('gie.demande.traite');
 });

@@ -11,14 +11,13 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ route('admin.home') }}">Tableau de bord</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('admin.client.index') }}">Clients</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Détails</li>
+                    <li class="breadcrumb-item active" aria-current="page">Paiements</li>
                 </ol>
             </nav>
         </div>
 
         <div class="row">
-            
+            <livewire:admin.paiement.client-paiement />
         </div>
     </div>
 @endsection

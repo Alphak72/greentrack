@@ -9,6 +9,40 @@
             </a>
         </li>
 
+        <!-- Demandes -->
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('admin.demande.index') }}">
+                <span class="icon-bg">
+                    <i class="mdi mdi-account-details menu-icon"></i>
+                </span>
+                <span class="menu-title">Démandes</span>
+            </a>
+        </li>
+
+        <!-- Paiements -->
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#paiement" aria-expanded="false" aria-controls="ui-basic">
+                <span class="icon-bg">
+                    <i class="mdi mdi-cash menu-icon"></i>
+                </span>
+                <span class="menu-title">Paiements</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="paiement">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> 
+                        <a class="nav-link" href="{{ route('admin.paiement.gie.index') }}">Paiements des gies</a>
+                    </li>
+                    <li class="nav-item"> 
+                        <a class="nav-link" href="{{ route('admin.paiement.client.index') }}">Paiements des clients</a>
+                    </li>
+                    <li class="nav-item"> 
+                        <a class="nav-link" href="#">Rapports</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+
         <!-- Clients -->
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#client" aria-expanded="false" aria-controls="ui-basic">
@@ -22,6 +56,24 @@
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> 
                         <a class="nav-link" href="{{ route('admin.client.index') }}">Tous les clients</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+
+        <!-- Gies -->
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#gie" aria-expanded="false" aria-controls="ui-basic">
+                <span class="icon-bg">
+                    <i class="mdi mdi-account-check menu-icon"></i>
+                </span>
+                <span class="menu-title">Gies</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="gie">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> 
+                        <a class="nav-link" href="{{ route('admin.gie.index') }}">Tous les Gies</a>
                     </li>
                 </ul>
             </div>

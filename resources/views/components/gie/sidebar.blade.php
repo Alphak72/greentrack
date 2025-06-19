@@ -23,10 +23,7 @@
                         <a class="nav-link" href="{{ route('gie.demande.attente') }}">En attente</a>
                     </li>
                     <li class="nav-item"> 
-                        <a class="nav-link" href="{{ route('gie.demande.encour') }}">En cour</a>
-                    </li>
-                    <li class="nav-item"> 
-                        <a class="nav-link" href="{{ route('gie.demande.traite') }}">Demandes traitées</a>
+                        <a class="nav-link" href="{{ route('gie.demande.traite') }}">Traitées</a>
                     </li>
                 </ul>
             </div>

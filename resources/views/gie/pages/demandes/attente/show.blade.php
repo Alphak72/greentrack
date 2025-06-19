@@ -42,6 +42,10 @@
                                 <th>{{ $demande->desc }}</th>
                             </tr>
                             <tr>
+                                <th>Montant</th>
+                                <th>@money($demande->amount, 'XOF')</th>
+                            </tr>
+                            <tr>
                                 <th>Statut</th>
                                 <th>
                                     @if ($demande->status == 0)

@@ -15,4 +15,9 @@ class DemandeClient extends Model
     {
         return $this->belongsTo(Gie::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

@@ -30,12 +30,13 @@ class RequestController extends Controller
     {
         $gies = Gie::all();
         $clients = Client::all();
+        $tarifs = Tarif::all();
 
         foreach ($gies as $gie)
         {
             if ($gie->id == $request->gie_id)
             {
-                $company = $gie->company;
+                $company = $gie->user->company;
             }
         }
 
@@ -44,6 +45,15 @@ class RequestController extends Controller
             if ($client->user_id == Auth()->user()->id)
             {
                 $client_id = $client->id;
+            }
+        }
+
+        foreach ($tarifs as $tarif)
+        {
+            if ($tarif->product == $request->desc)
+            {
+                $amount = $tarif->price - 500;
+                $amountClient = $tarif->price;
             }
         }
 
@@ -59,6 +69,7 @@ class RequestController extends Controller
                 'reference' => $request->reference,
                 'date' => $request->date,
                 'desc' => $request->desc,
+                'amount' => $amountClient,
                 'gie_id' => $request->gie_id,
                 'user_id' => Auth()->user()->id
             ]);
@@ -68,7 +79,8 @@ class RequestController extends Controller
                 'date' => $request->date,
                 'desc' => $request->desc,
                 'client_id' => $client_id,
-                'company' => $company
+                'company' => $company,
+                'amount' => $amount
             ]);
 
             toastr()->success('Demande envoyée avec succès.');
@@ -96,12 +108,13 @@ class RequestController extends Controller
         $gies = Gie::all();
         $clients = Client::all();
         $demandes = Demande::all();
+         $tarifs = Tarif::all();
 
         foreach ($gies as $gie)
         {
             if ($gie->id == $request->gie_id)
             {
-                $company = $gie->company;
+                $company = $gie->user->company;
             }
         }
 
@@ -121,6 +134,15 @@ class RequestController extends Controller
             }
         }
 
+        foreach ($tarifs as $tarif)
+        {
+            if ($tarif->product == $request->desc)
+            {
+                $amount = $tarif->price - 500;
+                $amountClient = $tarif->price;
+            }
+        }
+
         $request->validate([
             'reference' => 'required|unique:demande_clients,reference,'.$id,
             'date' => 'required',
@@ -135,6 +157,7 @@ class RequestController extends Controller
                     'reference' => $request->reference,
                     'date' => $request->date,
                     'desc' => $request->desc,
+                    'amount' => $amountClient,
                     'gie_id' => $request->gie_id,
                     'user_id' => Auth()->user()->id
                 ]);
@@ -144,7 +167,8 @@ class RequestController extends Controller
                     'date' => $request->date,
                     'desc' => $request->desc,
                     'client_id' => $client_id,
-                    'company' => $company
+                    'company' => $company,
+                    'amount' => $amount
                 ]);
 
                 toastr()->success('Demande modifiée avec succès.');

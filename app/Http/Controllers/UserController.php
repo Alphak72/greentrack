@@ -98,7 +98,11 @@ class UserController extends Controller
             {
                 Gie::create([
                     'name' => $user->name,
+                    'user_id' => $user->id
                 ]);
+
+                toastr()->success('Gie ajouté avec succès.');
+                return to_route('admin.gie.index');
             }
 
             toastr()->success('User ajouté avec succès.');
