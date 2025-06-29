@@ -48,4 +48,9 @@ class DemandeController extends Controller
         toastr()->success('Demande acceptée avec succès.');
         return to_route('gie.demande.attente');
     }
+
+    public function traite()
+    {
+        return view('gie.pages.demandes.traite.index');
+    }
 }

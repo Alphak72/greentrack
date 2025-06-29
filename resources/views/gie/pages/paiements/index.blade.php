@@ -11,12 +11,12 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ route('gie.home') }}">Tableau de bord</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Traitées</li>
+                    <li class="breadcrumb-item active" aria-current="page">Paiements</li>
                 </ol>
             </nav>
         </div>
         <div class="row">
-            <livewire:gie.demande.taite />
+            <livewire:gie.paiement.index-paiement />
         </div>
     </div>
 @endsection

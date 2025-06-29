@@ -63,5 +63,14 @@
                 <span class="menu-title">GIE</span>
             </a>
         </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('temoignage.index') }}">
+                <span class="icon-bg">
+                    <i class="mdi mdi-layout menu-icon"></i>
+                </span>
+                <span class="menu-title">Témoignages</span>
+            </a>
+        </li>
     </ul>
 </nav>

@@ -9,9 +9,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PaiementAdminController;
 use App\Http\Controllers\PaiementClientController;
+use App\Http\Controllers\PaiementGieController;
 use App\Http\Controllers\RequestController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\TarifController;
+use App\Http\Controllers\Temoignages;
 use App\Http\Controllers\UserController;
 
 /*
@@ -117,6 +119,12 @@ Route::prefix('client/paiements')->group(function () {
     Route::get('/show/id={id}', [PaiementClientController::class, 'show'])->name('client.paiement.show');
 });
 
+// Route Paiements -- Gie
+Route::prefix('gie/paiements')->group(function () {
+    Route::get('/', [PaiementGieController::class, 'index'])->name('gie.paiement.index');
+    Route::get('/show/id={id}', [PaiementGieController::class, 'show'])->name('gie.paiement.show');
+});
+
 // Route Demandes -- Gie
 Route::prefix('gie')->group(function () {
     Route::get('/demandes/attente', [DemandeController::class, 'attente'])->name('gie.demande.attente');
@@ -124,4 +132,16 @@ Route::prefix('gie')->group(function () {
     Route::get('/demandes/attente/store/id={id}', [DemandeController::class, 'attenteStore'])->name('gie.demande.attente.store');
     Route::get('/demandes/attente/cancel/id={id}', [DemandeController::class, 'attenteCancel'])->name('gie.demande.attente.cancel');
     Route::get('/demandes/traites', [DemandeController::class, 'traite'])->name('gie.demande.traite');
+});
+
+// Route Temoignages
+Route::prefix('temoignages')->group(function () {
+    Route::get('/', [Temoignages::class, 'index'])->name('temoignage.index');
+    Route::get('/approuves', [Temoignages::class, 'approved'])->name('temoignage.approved');
+    Route::post('/approved/store', [Temoignages::class, 'save'])->name('temoignage.approved.store');
+    Route::get('/create', [Temoignages::class, 'create'])->name('temoignage.create');
+    Route::post('/store', [Temoignages::class, 'store'])->name('temoignage.store');
+    Route::get('/edit/id={id}', [Temoignages::class, 'edit'])->name('temoignage.edit');
+    Route::post('/update/id={id}', [Temoignages::class, 'update'])->name('temoignage.update');
+    Route::get('/delete/id={id}', [Temoignages::class, 'delete'])->name('temoignage.delete');
 });

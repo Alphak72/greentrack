@@ -40,11 +40,9 @@
             <div class="collapse" id="paiement">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> 
-                        <a class="nav-link" href="#">Liste des paiements</a>
+                        <a class="nav-link" href="{{ route('gie.paiement.index') }}">Les paiements</a>
                     </li>
-                    <li class="nav-item"> 
-                        <a class="nav-link" href="#">Ajouter</a>
-                    </li>
+                    
                     <li class="nav-item"> 
                         <a class="nav-link" href="#">Rapports</a>
                     </li>

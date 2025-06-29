@@ -89,6 +89,16 @@
             </a>
         </li>
 
+        <!-- Témoignages -->
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('temoignage.approved') }}">
+                <span class="icon-bg">
+                    <i class="mdi mdi-layout menu-icon"></i>
+                </span>
+                <span class="menu-title">Témoignages</span>
+            </a>
+        </li>
+
         <!-- Users -->
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#user" aria-expanded="false" aria-controls="ui-basic">
