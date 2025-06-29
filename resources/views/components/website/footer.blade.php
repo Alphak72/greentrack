@@ -1,10 +1,10 @@
 <div class="container py-5">
     <div class="row g-5">
         <div class="col-lg-4 col-md-4">
-            <h5 class="text-uppercase text-light mb-4">GREENTRACK</h5>
+            <h5 class="text-uppercase text-light mb-4">FASO-CLEAN</h5>
             <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>Niamakoro cite unicef, Bamako, MALI</p>
-            <p class="mb-2"><i class="fa fa-phone-alt text-primary me-3"></i>+223 00 00 00 00</p>
-            <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>contact@greentrack.com</p>
+            <p class="mb-2"><i class="fa fa-phone-alt text-primary me-3"></i>+223 71 86 13 74</p>
+            <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>contact@FASO-CLEAN.com</p>
             <div class="d-flex pt-3">
                 <a class="btn btn-square btn-light me-2" href=""><i
                         class="fab fa-twitter"></i></a>

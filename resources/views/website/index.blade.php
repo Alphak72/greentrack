@@ -70,23 +70,34 @@
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                    <h1 class="display-6 text-uppercase mb-4">GREENTRACK</h1>
-                    <p class="mb-4">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue,
-                        iaculis id elit eget, ultrices pulvinar tortor. Quisque vel lorem porttitor, malesuada arcu
-                        quis, fringilla risus. Pellentesque eu consequat augue.
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue,
-                        iaculis id elit eget, ultrices pulvinar tortor. Quisque vel lorem porttitor, malesuada arcu
-                        quis, fringilla risus. Pellentesque eu consequat augue.
-                    </p>
+                    <h1 class="display-6 text-uppercase mb-4">FASO-CLEAN</h1>
+                    
                     
                     <p class="mb-4">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue,
-                        iaculis id elit eget, ultrices pulvinar tortor. Quisque vel lorem porttitor, malesuada arcu
-                        quis, fringilla risus. Pellentesque eu consequat augue.
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue,
-                        iaculis id elit eget, ultrices pulvinar tortor. Quisque vel lorem porttitor, malesuada arcu
-                        quis, fringilla risus. Pellentesque eu consequat augue.
+                        🌍 Ensemble, transformons notre cadre de vie !
+Chaque jour, Bamako produit plus de 22 000 m³ de déchets solides, dont une grande partie reste mal collectée ou jetée dans la nature .
+
+
+Notre application vous aide à :
+
+Demander une collecte géolocalisée de vos déchets, à la demande ou sur abonnement.
+
+Suivre chaque enlèvement en temps réel, avec date, heure et volume collecté.
+
+Optimiser les tournées pour réduire les trajets, économiser du carburant et diminuer les émissions de CO₂.
+
+Assurer une rémunération transparente des GIE, basée sur les collectes réelles.
+
+Recevoir des conseils écoresponsables et des statistiques sur votre impact environnemental.
+
+Pourquoi c’est important ?
+
+Une mauvaise gestion des déchets favorise la prolifération des maladies, telles que la fièvre typhoïde, le paludisme et les diarrhées, en raison de la présence de mouches et de vers .
+Inscrivez-vous dès aujourd’hui sur notre plateforme pour demander une collecte de déchets près de chez vous.
+🕒 Chaque collecte est géolocalisée : vous savez qui passe et quand.
+🚛 Les tournées sont planifiées de façon intelligente pour réduire les déplacements inutile Grâce aux statistiques et conseils écoresponsables, vous devenez acteur du changement dans votre quartier.
+
+Agissons ensemble !
                     </p>
                     <a href="#" class="btn btn-primary">Connaitre plus</a>
                 </div>
