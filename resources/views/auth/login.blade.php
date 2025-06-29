@@ -8,7 +8,7 @@
         <div class="col-lg-4 mx-auto">
             <div class="auth-form-light text-left p-5">
                 <div class="brand-logo">
-                    <h4>GreenTrack</h4>
+                    <h4>FASO-CLEAN</h4>
                 </div>
                 <h4>Bonjour ! Commençons</h4>
                 <h6 class="font-weight-light">Connectez-vous pour continuer.</h6>
