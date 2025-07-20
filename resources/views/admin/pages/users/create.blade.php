@@ -74,7 +74,6 @@
                                         <label for="type_user">Type user <span class="text-danger">*</span></label>
                                         <select name="type_user" id="type_user" class="form-control @error('type_user') is-invalid @enderror">
                                             <option value="" selected>Choisir le type user</option>
-                                            <option value="1" {{ old('type_user') == 1 ? 'selected' : '' }}>Super admin</option>
                                             <option value="2" {{ old('type_user') == 2 ? 'selected' : '' }}>GIE</option>
                                         </select>
                                         @error('type_user')

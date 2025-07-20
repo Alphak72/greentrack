@@ -182,4 +182,12 @@ class RequestController extends Controller
             return redirect()->back();
         }
     }
+
+    public function show($id)
+    {
+        $demande = DemandeClient::findOrFail($id);
+        return view('client.pages.demandes.show', [
+            'demande' => $demande,
+        ]);
+    }
 }
