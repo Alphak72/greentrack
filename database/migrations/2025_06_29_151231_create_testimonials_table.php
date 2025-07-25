@@ -16,6 +16,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(Client::class);
             $table->text('desc');
+            $table->boolean('status');
             $table->timestamps();
         });
     }

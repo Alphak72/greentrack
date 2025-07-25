@@ -26,6 +26,17 @@
                                 <label for="amount">Montant</label>
                                 <input type="number" class="form-control" name="amount" value="{{ $demande->amount }}" readonly>
                             </div>
+                            <div class="form-group">
+                                <label for="mode_paiement">Mode de paiement</label>
+                                <select name="mode_paiement" id="mode_paiement" class="form-control">
+                                    <option value="" selected>-- Choisir un mode de paiement --</option>
+                                    <option value="Orange Money">Orange Money</option>
+                                    <option value="Moov Money">Moov Money</option>
+                                    <option value="Wave">Wave</option>
+                                    <option value="Cheque">Cheque</option>
+                                    <option value="Especes">Especes</option>
+                                </select>
+                            </div>
                             <div class="form-group" style="display: none">
                                 <label for="reference">Reference</label>
                                 <input type="text" class="form-control" name="reference" value="{{ $demande->reference }}" readonly>

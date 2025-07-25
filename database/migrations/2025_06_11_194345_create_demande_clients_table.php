@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('reference');
             $table->string('desc');
             $table->integer('status')->default(0);
-             $table->integer('amount')->nullable();
+            $table->integer('amount')->nullable();
             $table->foreignIdFor(User::class);
             $table->foreignIdFor(Gie::class);
             $table->timestamps();
